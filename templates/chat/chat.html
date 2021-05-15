@@ -1,0 +1,45 @@
+{% extends "chat/base.html" %}
+{% load static %}
+
+{% block title %}{{ dialog.name }}{% endblock %}
+
+{% block imports %}<link rel="stylesheet" href="{% static 'chat/style.css' %}">{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="{% static 'chat/websocket.js' %}"></script>
+<div id="container">
+
+  <header>
+    <img class="min-pic" src="{{ dialog.photo.url }}">
+    <div>
+        <h2>{{ dialog.name }}</h2>
+        <h3>{{ dialog.users.count }} count of users</h3>
+    </div>
+</header>
+
+<ul id="messages">
+{% for message in dialog.messages.all %}
+    {% if message.at == user %}
+        <li class="me"><img class="user-photo" align="right" src="{{ message.at.photo.url }}">
+    {% else %}
+        <li class="user"><img class="user-photo" src="{{ message.at.photo.url }}">
+    {% endif %}
+        <div class="message">
+            <div class="entete">
+                <h2>{{ message.at.login }} </h2>
+                <h1>{{ message.date }}</h1>
+            </div>
+            <span>{{ message.text }}</span>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+
+<footer>
+    <input id="message-area" placeholder="Put the text..."></textarea>
+    <button id="send-message">Send</button>
+</footer>
+
+</div>
+<script type="text/javascript">WebsocketInit("{{ dialog.name }}", "{{ user.login }}");</script>
+{% endblock %}

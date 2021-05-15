@@ -1,0 +1,29 @@
+{% extends "chat/base.html" %}
+{% load static %}
+
+{% block title %}Mail{% endblock %}
+
+{% block imports %}<link rel="stylesheet" href="{% static 'chats/style.css' %}">{% endblock %}
+
+{% block content %}
+<aside>
+
+<ul>
+{% for dialog in dialogs.all %}
+  <li>
+      <img class="min-pic" src="{{ dialog.photo.url }}" alt="">
+      <div>
+          <h2>
+              <a href="{{ dialog.name }}">{{ dialog.name }}</a> <span>...</span>
+          </h2>
+          <h3>
+              <span class="status orange"></span>
+              {{ dialog.messages.count }}, count of messages
+          </h3>
+      </div>
+  </li>
+{% endfor %}
+</ul>
+
+</aside>
+{% endblock %}
