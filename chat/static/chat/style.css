@@ -1,0 +1,65 @@
+header{padding: 10px 4px 1px 20px;}
+header > *{display: inline-block; vertical-align: top;}
+header div{margin-left: 10px; margin-right: 145px;}
+header h2{font-size: 16px}
+header h3{font-size: 14px; font-weight: normal; color: #7e818a;}
+
+
+#container ul .me{text-align: right;}
+#container ul .user .message{background-color: #58b666;}
+#container ul .me .message{background-color: #6fbced;}
+#container ul li{padding: 5px 15px;}
+#container ul h1{color: black;}
+#container ul .entete{margin-bottom: 2px;}
+
+#container{
+    background: #eff3f7;
+    width: 100%;
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: top;
+    border-radius: 8px;
+}
+
+#container ul{
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow-y: scroll;
+    height: 535px;
+    border-top: 2px solid #3b3e49;
+    border-bottom: 2px solid #3b3e49;
+}
+
+#container ul h2,#container ul h1{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#container ul .message{
+    padding: 0px 10px 10px 12px;
+    color: #fff;
+    max-width: 75%;
+    display: inline-block;
+    text-align: left;
+    border-radius: 5px;
+}
+
+#container ul img.user-photo{
+    border-radius: 50%;
+    padding: 5px;
+    width: 48px;
+    height: 48px;
+}
+
+footer button {width:  10%; background-color:  gray;}
+footer{display: flex; background-color: #3b3e49;width: 100%;}
+footer input::placeholder{color: #ddd;}
+footer img{height: 29px; cursor: pointer;}
+footer input{
+    resize: none;
+    width:  90%;
+    border-radius: 5px;
+    font-size: 13px;
+}
